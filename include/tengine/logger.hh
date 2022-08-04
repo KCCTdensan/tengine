@@ -9,6 +9,7 @@ class Logger {
  public:
   Logger(std::string file);
   ~Logger();
+
   void log(std::string msg);
 };
 

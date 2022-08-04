@@ -1,3 +1,3 @@
-#include "common.hh"
+#include <tengine/common.hh>
 
 using namespace tengine;

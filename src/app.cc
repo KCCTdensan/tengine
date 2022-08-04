@@ -1,29 +1,52 @@
-#include "app.hh"
-
 #include <GLFW/glfw3.h>
 
-#include "common.hh"
-#include "logger.hh"
+#include <tengine/app.hh>
+#include <tengine/common.hh>
+#include <tengine/logger.hh>
 
+using namespace std::literals;
 using namespace tengine;
 
-std::unique_ptr<App> App::New(int winWidth, int winHeight,
+std::unique_ptr<App> App::New(Window::Size winWidth, Window::Size winHeight,
                               std::string_view title) {
-  return std::unique_ptr<App>{new App{winWidth, winHeight, title}};
+  return std::make_unique<App::DefaultApp>(winWidth, winHeight, title);
 }
 
-App::App(int winWidth, int winHeight, std::string_view title) {
-  this->_glfw = std::unique_ptr<_GLFW>{new _GLFW};
-  this->_win = std::unique_ptr<Window>{
-      new Window{winWidth, winHeight, std::string{title}}};
-}
-
-App::~App() = default;
-
-_GLFW::_GLFW() {
+GLApp::GLApp() {
   if (!glfwInit()) {
     throw TengineSystemError{"glfwInit failed"};
   }
 }
 
-_GLFW::~_GLFW() { glfwTerminate(); }
+GLApp::GLApp(int winWidth, int winHeight, std::string_view title) : GLApp{} {
+  createWindow(winWidth, winHeight, title);
+  // setMainWin(win);
+}
+
+GLApp::~GLApp() { glfwTerminate(); }
+
+AppWin GLApp::appendWindow(std::shared_ptr<Window> win) {
+  // very wip
+  return {123, win};
+}
+
+AppWin GLApp::createWindow(int winWidth, int winHeight,
+                           std::string_view title) {
+  auto win = std::make_shared<GLWindow>(winWidth, winHeight, title);
+  return appendWindow(win);
+}
+
+AppWin GLApp::getWindow(AppWin::Id id) {
+  // very wip
+  return {123, nullptr};
+}
+
+std::vector<AppWin> GLApp::listWindow() {
+  // very wip
+  return {};
+}
+
+AppWin::Id GLApp::destroyWindow(AppWin::Id id) {
+  // very wip
+  return id;
+}
