@@ -1,3 +1,5 @@
+#pragma once
+
 #include <fstream>
 #include <string>
 
@@ -13,4 +15,4 @@ class Logger {
   void log(std::string msg);
 };
 
-}  // namespace tengine
+}

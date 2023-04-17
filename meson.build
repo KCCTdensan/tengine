@@ -1,11 +1,16 @@
 project('tengine', 'cpp',
+  version: '0.1.0',
   default_options: ['cpp_std=c++20'])
+
+ver = meson.project_version()
+add_global_arguments(f'-DVERSION=@ver@', language: 'cpp')
 
 src = [
   'src/app.cc',
-  'src/common.cc',
+  'src/behaviour.cc',
   'src/logger.cc',
-  'src/window.cc',
+  'src/object.cc',
+  'src/tokina.cc',
 ]
 
 deps = [
