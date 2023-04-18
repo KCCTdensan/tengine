@@ -4,13 +4,22 @@
 
 namespace tengine {
 
-class Collider2D {
+class CircleCollider2D {
   // こいつの設計どうすればいいんだろうか
 
-  //  Collider2D(Transform2 &transform2) { transform = transform2; }
+  CircleCollider2D(Transform2 &transform2);
+
+ protected:
+  void OnCollitionEnter();
+
+  void OnCollitionExit();
+
+  void OnCollitionStay();
 
  protected:
   Transform2 &transform;
+  double radius = 1;
+  bool onTrigger = false;
 };
 
 }
