@@ -13,3 +13,8 @@ Vec2 Vec2::operator-(const Vec2 &vec) {
   this->x -= vec.x;
   this->y -= vec.y;
 }
+
+Vec2 Vec2::operator*(const double &scaler) {
+  this->x *= scaler;
+  this->y *= scaler;
+}
