@@ -5,6 +5,7 @@ namespace tengine {
 class Behaviour {
  private:
   /* data */
+
  public:
   Behaviour(/* args */);
   ~Behaviour();

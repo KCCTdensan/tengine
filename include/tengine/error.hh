@@ -7,10 +7,10 @@ namespace tengine {
 
 class BaseError : public std::exception {
  protected:
-  std::string msg;
+  std::string& msg;
 
  public:
-  BaseError(std::string& _msg) : msg{_msg};
+  BaseError(std::string _msg) : msg{_msg} {};
 };
 
 class SystemError : public BaseError {

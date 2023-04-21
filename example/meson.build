@@ -1,5 +1,7 @@
-project('example')
+src_example = files(
+  'app.cc',
+)
 
-tengine = dependency('tengine')
-
-executable('example', 'app.cc', dependencies: tengine)
+example = executable('example', src_example,
+  include_directories: inc,
+  link_with: tengine)

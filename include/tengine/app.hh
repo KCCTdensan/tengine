@@ -1,5 +1,9 @@
 #pragma once
 
+#include <GLFW/glfw3.h>
+
+#include <tengine/logger.hh>
+
 namespace tengine {
 
 class App {
@@ -8,6 +12,11 @@ class App {
  public:
   App();
   ~App();
+
+  Logger& logger = Logger::get();
+
+  void start();
+  void render();
 };
 
 }

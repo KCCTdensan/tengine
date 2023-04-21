@@ -1,22 +1,23 @@
 #include <tengine/rigidbody2d.hh>
-#include <tengine/transform2.hh>
+#include <tengine/transform2d.hh>
 #include <tengine/vec2.hh>
+
 using namespace tengine;
 
-void RigidBody2D::update(Transform2 &objectTransform2) {
+void RigidBody2D::update(Transform2D &objectTransform2) {
   {
-    this->Acceleration.y = this->g;
+    this->acceleration.y = this->g;
 
-    this->Velocity.y += this->Acceleration.y * this->deltaTime;
+    this->velocity.y += this->acceleration.y * this->deltaTime;
 
     Vec2 objectPosition = objectTransform2.getPosition();
 
-    objectPosition.y += this->Velocity.y * this->deltaTime;
+    objectPosition.y += this->velocity.y * this->deltaTime;
   }
 }
 
 void RigidBody2D::addForce(Vec2 &force) {
   // ma=F -> a=F/m
-  this->Acceleration.x += force.x / this->mazz;
-  this->Acceleration.y += force.y / this->mazz;
+  this->acceleration.x += force.x / this->mazz;
+  this->acceleration.y += force.y / this->mazz;
 }

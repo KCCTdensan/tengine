@@ -10,7 +10,10 @@ src = [
   'src/behaviour.cc',
   'src/logger.cc',
   'src/object.cc',
+  'src/rigidbody2d.cc',
   'src/tokina.cc',
+  'src/transform2d.cc',
+  'src/vec2.cc',
 ]
 
 deps = [
@@ -26,3 +29,5 @@ tengine = library('tengine', src,
   dependencies: deps,
   include_directories: inc,
   install: true)
+
+subdir('example')

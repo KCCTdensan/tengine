@@ -1,3 +1,7 @@
+#pragma once
+
 namespace tengine {
+
 class MeshRenderer {};
-}  // namespace tengine
+
+}

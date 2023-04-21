@@ -3,18 +3,22 @@
 #include <cstdint>
 #include <string>
 
-namespace std {
+#define QUOTE(s) #s
+
+namespace tengine {
+
+using namespace std::literals;
 
 ////////////////////////////////////////////////////////////////
 //  Meta                                                      //
 ////////////////////////////////////////////////////////////////
 
 #ifndef VERSION
-#define VERSION "undefined"
+#define VERSION undefined
 #endif
 
-constexpr inline std::string_view name = "tengine";
-constexpr inline std::string_view version = VERSION;
+inline constexpr const char* name = "tengine";
+inline constexpr const char* version = QUOTE(VERSION);
 
 ////////////////////////////////////////////////////////////////
 //  Types                                                     //

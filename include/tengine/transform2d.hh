@@ -4,7 +4,7 @@
 
 namespace tengine {
 
-class Transform2 {
+class Transform2D {
  public:
   Vec2 getPosition() const;
   void setPosition(const Vec2 &position);
@@ -15,7 +15,7 @@ class Transform2 {
   Vec2 getRotate() const;
   void setRotate(const Vec2 &rotate);
 
-  double distance(const Transform2 &transform2);
+  double distance(const Transform2D &transform2);
 
  protected:
   Vec2 Position = {0, 0};

@@ -1,10 +1,7 @@
 #include <tengine/logger.hh>
 
-using namespace std::literals;
 using namespace tengine;
 
-Logger::Logger(std::string file) { _ofs = std::ofstream{file, std::ios::app}; }
-
-Logger::~Logger() {}
-
-void Logger::log(std::string msg) { _ofs << "log: "s << msg << std::endl; }
+void Logger::log(std::string msg) { stderr << "[LOG] " << msg << std::endl; }
+void Logger::dbg(std::string msg) { stderr << "[DEBUG] " << msg << std::endl; }
+void Logger::err(std::string msg) { stderr << "[ERROR] " << msg << std::endl; }
