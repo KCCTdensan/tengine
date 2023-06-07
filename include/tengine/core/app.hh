@@ -2,7 +2,8 @@
 
 #include <GLFW/glfw3.h>
 
-#include <tengine/logger.hh>
+#include <tengine/core/logger.hh>
+#include <tengine/manager/assets_manager.hh>
 
 namespace tengine {
 
@@ -14,6 +15,7 @@ class App {
   ~App();
 
   Logger& logger = Logger::get();
+  AssetsManager assets;
 
   void start();
   void render();

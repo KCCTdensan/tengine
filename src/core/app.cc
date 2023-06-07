@@ -1,8 +1,8 @@
 #include <GLFW/glfw3.h>
 
-#include <tengine/app.hh>
-#include <tengine/error.hh>
-#include <tengine/logger.hh>
+#include <tengine/core/app.hh>
+#include <tengine/core/error.hh>
+#include <tengine/core/logger.hh>
 #include <tengine/utils.hh>
 
 using namespace tengine;

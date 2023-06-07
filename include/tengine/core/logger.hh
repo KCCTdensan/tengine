@@ -18,9 +18,14 @@ class Logger {
   std::ostream& stdout = std::cout;
   std::ostream& stderr = std::cerr;
 
-  void log(std::string msg);
-  void err(std::string msg);
-  void dbg(std::string msg);
+  template <typename... Args>
+  void log(Args... args);
+
+  template <typename... Args>
+  void err(Args... args);
+
+  template <typename... Args>
+  void dbg(Args... args);
 };
 
 }

@@ -2,6 +2,6 @@ src_example = files(
   'app.cc',
 )
 
-example = executable('example', src_example,
+executable('example', src_example,
   include_directories: inc,
   link_with: tengine)

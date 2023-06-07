@@ -1,5 +1,6 @@
 #pragma once
 
+#include <tengine/2d/box_collider.hh>
 #include <tengine/behaviour.hh>
 #include <tengine/circle_collider2d.hh>
 #include <tengine/mesh_renderer.hh>
@@ -15,6 +16,7 @@ class GameObject : public Behaviour {
 
  public:
   Transform2D transform;
+  BoxCollider2D collider;
 };
 
 }

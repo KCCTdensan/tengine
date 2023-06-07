@@ -1,11 +1,11 @@
 #pragma once
 
-#include <tengine/app.hh>
 #include <tengine/behaviour.hh>
 #include <tengine/box_collider2d.hh>
 #include <tengine/circle_collider2d.hh>
-#include <tengine/error.hh>
-#include <tengine/logger.hh>
+#include <tengine/core/app.hh>
+#include <tengine/core/error.hh>
+#include <tengine/core/logger.hh>
 #include <tengine/mesh_renderer.hh>
 #include <tengine/object.hh>
 #include <tengine/physics_material2d.hh>
