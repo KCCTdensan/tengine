@@ -23,10 +23,12 @@ App::~App() { glfwTerminate(); }
 
 void App::start() {
   while (!glfwWindowShouldClose(window)) {
+    glClear(GL_COLOR_BUFFER_BIT);
     render();
     glfwSwapBuffers(window);
     glfwPollEvents();
   }
 }
 
-void App::render() { glClear(GL_COLOR_BUFFER_BIT); }
+void App::render() {}
+// void App::render() { glClear(GL_COLOR_BUFFER_BIT); }

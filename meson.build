@@ -14,6 +14,8 @@ src = [
   'src/tokina.cc',
   'src/transform2d.cc',
   'src/vec2.cc',
+  'src/vec3.cc',
+  'src/mesh_renderer.cc',
 ]
 
 deps = [
