@@ -22,19 +22,18 @@ App::App() {
 
 App::~App() { glfwTerminate(); }
 
-void App::start() {
+void App::render() {
+  glClear(GL_COLOR_BUFFER_BIT);
+  start();
   while (!glfwWindowShouldClose(window)) {
     glClear(GL_COLOR_BUFFER_BIT);
-    render();
+    update();
     glfwSwapBuffers(window);
     glfwPollEvents();
   }
 }
 
-void App::render() {
-  glClear(GL_COLOR_BUFFER_BIT);
-  update();
-}
+void App::start() {}
 
 void App::update() {}
 

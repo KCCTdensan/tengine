@@ -14,7 +14,6 @@ class Behaviour {
   virtual void start();
   virtual void update();
   virtual void awake();
-  bool started = false;
 };
 
 }
