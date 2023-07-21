@@ -5,6 +5,6 @@
 auto main() -> int {
   auto game = tengine::App{};
   game.logger.log("game initialized");
-  game.start();
+  game.render();
   game.logger.log("bye");
 }

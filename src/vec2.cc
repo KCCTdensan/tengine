@@ -10,7 +10,7 @@ double Vec2::size() {
 }
 
 Vec2 Vec2::operator-(const Vec2 &vec) {
-  Vec2 res;
+  Vec2 res = (*this);
   res.x -= vec.x;
   res.y -= vec.y;
   return res;
