@@ -10,10 +10,11 @@
 namespace tengine {
 
 class GameObject : public Behaviour {
-  GameObject() = default;
-  virtual ~GameObject() = default;
-
  public:
+  GameObject();
+  virtual ~GameObject() = default;
+  void setTransform(Transform2D t);
+  MeshRenderer mesh;
   Transform2D transform;
 };
 

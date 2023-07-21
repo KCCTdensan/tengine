@@ -10,7 +10,9 @@ class Vec2 {
   double size();
 
   Vec2 operator-(const Vec2 &vec);
+  Vec2 operator-=(const Vec2 &vec);
   Vec2 operator*(const double &scaler);
+  Vec2 operator*=(const double &scaler);
   Vec2 operator*=(const Vec2 &vec);
 };
 

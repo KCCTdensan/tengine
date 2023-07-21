@@ -1,4 +1,6 @@
 #include <cmath>
+#include <string>
+#include <tengine/app.hh>
 #include <tengine/vec3.hh>
 using namespace tengine;
 

@@ -1,5 +1,6 @@
 src_example = files(
   'app.cc',
+  'main.cc',
 )
 
 example = executable('example', src_example,

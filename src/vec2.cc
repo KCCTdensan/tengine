@@ -10,13 +10,27 @@ double Vec2::size() {
 }
 
 Vec2 Vec2::operator-(const Vec2 &vec) {
-  this->x -= vec.x;
-  this->y -= vec.y;
+  Vec2 res;
+  res.x -= vec.x;
+  res.y -= vec.y;
+  return res;
+}
+
+Vec2 Vec2::operator-=(const Vec2 &vec) {
+  (*this) = (*this) - vec;
+  return (*this);
 }
 
 Vec2 Vec2::operator*(const double &scaler) {
-  this->x *= scaler;
-  this->y *= scaler;
+  Vec2 res = *this;
+  res.x *= scaler;
+  res.y *= scaler;
+  return res;
+}
+
+Vec2 Vec2::operator*=(const double &scaler) {
+  (*this) = (*this) * scaler;
+  return (*this);
 }
 
 Vec2 Vec2::operator*=(const Vec2 &vec) {

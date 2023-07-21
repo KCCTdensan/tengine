@@ -2,18 +2,20 @@
 #include <tengine/vec3.hh>
 using namespace tengine;
 
-MeshRenderer::MeshRenderer(Transform2D *init) { this->transform = init; }
+MeshRenderer::MeshRenderer(Transform2D *init) { this->t = init; }
 
 MeshRenderer::MeshRenderer() {}
 
-void MeshRenderer::SetTransform(Transform2D *_transform) {
-  this->transform = _transform;
-}
+void MeshRenderer::setTransform(Transform2D *s) { this->t = s; }
 
-void MeshRenderer::Square(Transform2D *_transform, Vec2 size, Vec3 color) {
-  auto scale = (*_transform).getScale();
+void MeshRenderer::setColor(Vec3 c) { color = c; }
+
+Vec3 MeshRenderer::getColor() { return color; }
+
+void MeshRenderer::square() {
+  auto scale = (*t).getScale();
   scale *= size;
-  auto pos = (*_transform).getPosition();
+  auto pos = (*t).getPosition();
 
   double x1 = pos.x - scale.x / 2, x2 = pos.x + scale.x / 2;
   double y1 = pos.y - scale.y / 2, y2 = pos.y + scale.y / 2;
@@ -26,10 +28,8 @@ void MeshRenderer::Square(Transform2D *_transform, Vec2 size, Vec3 color) {
   glEnd();
 }
 
-void MeshRenderer::Draw() {
+void MeshRenderer::render() {
   glLoadIdentity();
   glTranslatef(0.0f, 0.0f, -1.0f);
-  Vec2 size = {1, 1};
-  Vec3 color = {1, 1, 1};
-  Square(this->transform, size, color);
+  square();
 }

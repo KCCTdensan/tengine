@@ -32,4 +32,4 @@ tengine = library('tengine', src,
   include_directories: inc,
   install: true)
 
-subdir('example')
+subdir('example/MouseCousorTest')
