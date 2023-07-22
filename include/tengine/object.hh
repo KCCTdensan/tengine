@@ -13,7 +13,6 @@ class GameObject : public Behaviour {
  public:
   GameObject();
   virtual ~GameObject() = default;
-  void setTransform(Transform2D t);
   MeshRenderer mesh;
   Transform2D transform;
 };

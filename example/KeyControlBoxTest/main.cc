@@ -1,4 +1,5 @@
 #include <string>
+#include <tengine/keycode.hh>
 #include <tengine/tengine.hh>
 using namespace tengine;
 
@@ -21,6 +22,8 @@ Player player;
 
 BackGround background;
 
+KeyCode keycode;
+
 void tengine::App::start() {
   player.start();
   background.start();
@@ -29,16 +32,16 @@ void tengine::App::start() {
 void tengine::App::update() {
   auto pos = player.transform.getPosition();
   double speed = 0.02;
-  if (this->getKey('W')) {
+  if (getKey(keycode.W)) {
     pos.y += speed;
   }
-  if (this->getKey('A')) {
+  if (getKey(keycode.A)) {
     pos.x -= speed;
   }
-  if (this->getKey('S')) {
+  if (getKey(keycode.S)) {
     pos.y -= speed;
   }
-  if (this->getKey('D')) {
+  if (getKey(keycode.D)) {
     pos.x += speed;
   }
   player.transform.setPosition(pos);

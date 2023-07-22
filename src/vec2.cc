@@ -38,3 +38,7 @@ Vec2 Vec2::operator*=(const Vec2 &vec) {
   this->y *= vec.y;
   return (*this);
 }
+
+bool Vec2::operator==(const Vec2 &vec) {
+  return (((this->x) == vec.x) && ((this->y) == vec.y));
+}

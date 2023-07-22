@@ -10,6 +10,7 @@ namespace tengine {
 
 class App {
   GLFWwindow* window;
+  bool gamequit = false;
 
  public:
   App();
@@ -20,6 +21,7 @@ class App {
   void start();
   void render();
   void update();
+  void quit();
   bool getKey(char KeyCode);
   Vec2 getMousePos();
 };

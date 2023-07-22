@@ -5,6 +5,7 @@
 #include <tengine/box_collider2d.hh>
 #include <tengine/circle_collider2d.hh>
 #include <tengine/error.hh>
+#include <tengine/keycode.hh>
 #include <tengine/logger.hh>
 #include <tengine/mesh_renderer.hh>
 #include <tengine/object.hh>

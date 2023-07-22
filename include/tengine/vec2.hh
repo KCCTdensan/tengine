@@ -14,6 +14,7 @@ class Vec2 {
   Vec2 operator*(const double &scaler);
   Vec2 operator*=(const double &scaler);
   Vec2 operator*=(const Vec2 &vec);
+  bool operator==(const Vec2 &vec);
 };
 
 }

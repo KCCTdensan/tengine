@@ -28,6 +28,9 @@ void App::render() {
   while (!glfwWindowShouldClose(window)) {
     glClear(GL_COLOR_BUFFER_BIT);
     update();
+    if (gamequit) {
+      break;
+    }
     glfwSwapBuffers(window);
     glfwPollEvents();
   }
@@ -36,6 +39,8 @@ void App::render() {
 void App::start() {}
 
 void App::update() {}
+
+void App::quit() { gamequit = true; }
 
 bool App::getKey(char KeyCode) { return glfwGetKey(this->window, KeyCode); }
 
