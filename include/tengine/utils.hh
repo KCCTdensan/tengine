@@ -13,12 +13,12 @@ using namespace std::literals;
 //  Meta                                                      //
 ////////////////////////////////////////////////////////////////
 
-#ifndef VERSION
-#define VERSION undefined
+#ifndef TENGINE_VERSION
+#define TENGINE_VERSION undefined
 #endif
 
 inline constexpr const char* name = "tengine";
-inline constexpr const char* version = QUOTE(VERSION);
+inline constexpr const char* version = QUOTE(TENGINE_VERSION);
 
 ////////////////////////////////////////////////////////////////
 //  Types                                                     //

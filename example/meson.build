@@ -1,0 +1,2 @@
+subdir('KeyControlBoxTest')
+subdir('MouseCursorTest')
